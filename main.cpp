@@ -8,17 +8,17 @@ int main(int argc, char** argv) {
     std::string columnNames1[3] = {"PYPL", "CodingDojo", "IEEE Trending"};
     std::string columnNames2[2] = {"IEEE Jobs", "IEEE Open"};
 
-    /// Добавление 3 колонок, с именами из списка, ширина устанавливается по максимаьной длине элементов
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ 3 РєРѕР»РѕРЅРѕРє, СЃ РёРјРµРЅР°РјРё РёР· СЃРїРёСЃРєР°, С€РёСЂРёРЅР° СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РїРѕ РјР°РєСЃРёРјР°СЊРЅРѕР№ РґР»РёРЅРµ СЌР»РµРјРµРЅС‚РѕРІ
     table.appendMultipleColumns(3, columnNames1, SimpleTable<std::string>::Width::BY_MAX);
-    /// Вставка во второй ИНДЕКС 2 элементов, с именами из списка, ширина устанавливается по средней длине элементов
+    /// Р’СЃС‚Р°РІРєР° РІРѕ РІС‚РѕСЂРѕР№ РРќР”Р•РљРЎ 2 СЌР»РµРјРµРЅС‚РѕРІ, СЃ РёРјРµРЅР°РјРё РёР· СЃРїРёСЃРєР°, С€РёСЂРёРЅР° СѓСЃС‚Р°РЅР°РІР»РёРІР°РµС‚СЃСЏ РїРѕ СЃСЂРµРґРЅРµР№ РґР»РёРЅРµ СЌР»РµРјРµРЅС‚РѕРІ
     table.insertMultileColumns(2, 2, columnNames2, SimpleTable<std::string>::Width::BY_AVERAGE);
-    /// Вставка в 1 первый ИНДЕКС элемент, длина фиксированная
+    /// Р’СЃС‚Р°РІРєР° РІ 1 РїРµСЂРІС‹Р№ РРќР”Р•РљРЎ СЌР»РµРјРµРЅС‚, РґР»РёРЅР° С„РёРєСЃРёСЂРѕРІР°РЅРЅР°СЏ
     table.insertColumn(1, "Tiobe", 7);
 
     std::string pyplItems[20] = {"Java", "Python", "PHP", "C#", "JavaScript", "C++", "C", "Objective-C", "R", "Swift", "Matlab", "Ruby", "VBA", "Visual Basic", "Scala", "Perl", "lua", "Delphi", "Go", "Haskell"};
-    /// Добавлениев колонку с индексом 0, 20 элементов из массива
+    /// Р”РѕР±Р°РІР»РµРЅРёРµРІ РєРѕР»РѕРЅРєСѓ СЃ РёРЅРґРµРєСЃРѕРј 0, 20 СЌР»РµРјРµРЅС‚РѕРІ РёР· РјР°СЃСЃРёРІР°
     table.getColumn(0).appendMultileItems(20, pyplItems);
-    /// Добавление одного элемента в колонку 1
+    /// Р”РѕР±Р°РІР»РµРЅРёРµ РѕРґРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ РєРѕР»РѕРЅРєСѓ 1
     table.getColumn(1).appendItem("Java");
     table.getColumn(1).appendItem("C");
     table.getColumn(1).appendItem("C++");
@@ -26,22 +26,22 @@ int main(int argc, char** argv) {
     table.getColumn(1).appendItem("Python");
     table.getColumn(1).appendItem("JavaScript");
     table.getColumn(1).appendItem("Assembly");
-    /// Вставка одного элемента в колонку 1, в позицию 6
+    /// Р’СЃС‚Р°РІРєР° РѕРґРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РІ РєРѕР»РѕРЅРєСѓ 1, РІ РїРѕР·РёС†РёСЋ 6
     table.getColumn(1).insertItem("PHP", 6);
     std::string halfTiobeItems[12] = {"VB.NET", "Perl", "Delphi", "Ruby", "Swift", "Objective-C", "Matlab", "Groovy", "Visual Basic", "Ruby", "Go", "PL/SQL"};
     table.getColumn(1).appendMultileItems(12, halfTiobeItems);
-    /// Удалить 19 (последний) элемент из 1 колонки
+    /// РЈРґР°Р»РёС‚СЊ 19 (РїРѕСЃР»РµРґРЅРёР№) СЌР»РµРјРµРЅС‚ РёР· 1 РєРѕР»РѕРЅРєРё
     table.getColumn(1).deleteItem(19);
-    /// Удалить последний элемент
+    /// РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚
     table.getColumn(1).deleteLastItem();
     table.getColumn(1).appendItem(halfTiobeItems[10]);
     table.getColumn(1).appendItem(halfTiobeItems[11]);
-    /// Удалить последнюю колонку
+    /// РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅСЋСЋ РєРѕР»РѕРЅРєСѓ
     table.deleteLastColumn();
     table.appendColumn("IEEE Trending", 10);
 
 
-    ///Заполнение остального
+    ///Р—Р°РїРѕР»РЅРµРЅРёРµ РѕСЃС‚Р°Р»СЊРЅРѕРіРѕ
     std::string codingDojoItems[9] = {"SQL", "Java", "JavaScript", "C#", "Python", "C++", "PHP", "iOS", "Ruby/Rails"};
     std::string ieeeJobsItems[20] = {"C", "Java", "Python", "C++", "JavaScript", "C#", "PHP", "Ruby", "HTML", "Swift", "Assembly", "Ruby", "Scala", "Shell", "Perl", "SQL", "Objective-C", "Matlab", "Visual Basic", "Go"};
     std::string ieeeOpenItems[20] = {"C++", "Python", "C", "Java", "Swift", "JavaScript", "C#", "Ruby", "PHP", "HTML", "Go", "Scala", "Objective-C", "Shell", "Arduino", "Assembly", "Matlab", "Lua", "Perl"};
@@ -52,10 +52,10 @@ int main(int argc, char** argv) {
     table.getColumn(4).appendMultileItems(20, ieeeOpenItems);
     table.getColumn(5).appendMultileItems(20, ieeeTrendingItems);
 
-    /// Вывод всей таблицы
+    /// Р’С‹РІРѕРґ РІСЃРµР№ С‚Р°Р±Р»РёС†С‹
     table.showTable();
 
-    /// Вывод колонки
+    /// Р’С‹РІРѕРґ РєРѕР»РѕРЅРєРё
     ///table.showColumn(2);
 	return 0;
 }

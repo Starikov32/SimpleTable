@@ -17,99 +17,99 @@ class SimpleTable
 	public:
 		enum Width{MANUAL, BY_AVERAGE, BY_MAX};
 
-		// Конструкторы
+		// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 		explicit SimpleTable(const char verticalSeparator = '|', const char horizontalSeparator = '-', const char cornerSeparator = '+');
 
-		// Добавление колонок в конец
-		void appendMultipleColumns(int n, std::string * columnNames, Width width); // Добавить сразу несколько колонок в конец таблицы, ширина AUTO
-		void appendMultipleColumns(int n, std::string * columnNames, int * columnWidths); // Добавить сразу несколько колонок в конец таблицы, ширина MANUAL
-		void appendColumn(std::string columnName, Width width); // Добавить одну колонку в конец таблицы, ширина AUTO
-		void appendColumn(std::string columnName, int columnWidth); // Добавить одну колонку в конец таблицы, ширина MANUAL
+		// Р”РѕР±Р°РІР»РµРЅРёРµ РєРѕР»РѕРЅРѕРє РІ РєРѕРЅРµС†
+		void appendMultipleColumns(int n, std::string * columnNames, Width width); // Р”РѕР±Р°РІРёС‚СЊ СЃСЂР°Р·Сѓ РЅРµСЃРєРѕР»СЊРєРѕ РєРѕР»РѕРЅРѕРє РІ РєРѕРЅРµС† С‚Р°Р±Р»РёС†С‹, С€РёСЂРёРЅР° AUTO
+		void appendMultipleColumns(int n, std::string * columnNames, int * columnWidths); // Р”РѕР±Р°РІРёС‚СЊ СЃСЂР°Р·Сѓ РЅРµСЃРєРѕР»СЊРєРѕ РєРѕР»РѕРЅРѕРє РІ РєРѕРЅРµС† С‚Р°Р±Р»РёС†С‹, С€РёСЂРёРЅР° MANUAL
+		void appendColumn(std::string columnName, Width width); // Р”РѕР±Р°РІРёС‚СЊ РѕРґРЅСѓ РєРѕР»РѕРЅРєСѓ РІ РєРѕРЅРµС† С‚Р°Р±Р»РёС†С‹, С€РёСЂРёРЅР° AUTO
+		void appendColumn(std::string columnName, int columnWidth); // Р”РѕР±Р°РІРёС‚СЊ РѕРґРЅСѓ РєРѕР»РѕРЅРєСѓ РІ РєРѕРЅРµС† С‚Р°Р±Р»РёС†С‹, С€РёСЂРёРЅР° MANUAL
 
-		// Добавление колонок в произвольное место
-		void insertMultileColumns(int index, int n, std::string * columnNames, Width width) throw(std::out_of_range); // Вставить несколько колонок в таблицу начиная с INDEX, ширина AUTO
-		void insertMultileColumns(int index, int n, std::string * columnNames, int * columnWidths) throw(std::out_of_range); // Вставить несколько колонок в таблицу начиная с INDEX, ширина MANUAL
-		void insertColumn(int index, std::string columnName, Width width) throw(std::out_of_range); // Вставить колонку в таблицу в выбранный INDEX, ширина AUTO
-		void insertColumn(int index, std::string columnName, int columnWidth) throw(std::out_of_range); // Вставить колонку в таблицу в выбранный INDEX, ширина MANUAL
+		// Р”РѕР±Р°РІР»РµРЅРёРµ РєРѕР»РѕРЅРѕРє РІ РїСЂРѕРёР·РІРѕР»СЊРЅРѕРµ РјРµСЃС‚Рѕ
+		void insertMultileColumns(int index, int n, std::string * columnNames, Width width) throw(std::out_of_range); // Р’СЃС‚Р°РІРёС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ РєРѕР»РѕРЅРѕРє РІ С‚Р°Р±Р»РёС†Сѓ РЅР°С‡РёРЅР°СЏ СЃ INDEX, С€РёСЂРёРЅР° AUTO
+		void insertMultileColumns(int index, int n, std::string * columnNames, int * columnWidths) throw(std::out_of_range); // Р’СЃС‚Р°РІРёС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ РєРѕР»РѕРЅРѕРє РІ С‚Р°Р±Р»РёС†Сѓ РЅР°С‡РёРЅР°СЏ СЃ INDEX, С€РёСЂРёРЅР° MANUAL
+		void insertColumn(int index, std::string columnName, Width width) throw(std::out_of_range); // Р’СЃС‚Р°РІРёС‚СЊ РєРѕР»РѕРЅРєСѓ РІ С‚Р°Р±Р»РёС†Сѓ РІ РІС‹Р±СЂР°РЅРЅС‹Р№ INDEX, С€РёСЂРёРЅР° AUTO
+		void insertColumn(int index, std::string columnName, int columnWidth) throw(std::out_of_range); // Р’СЃС‚Р°РІРёС‚СЊ РєРѕР»РѕРЅРєСѓ РІ С‚Р°Р±Р»РёС†Сѓ РІ РІС‹Р±СЂР°РЅРЅС‹Р№ INDEX, С€РёСЂРёРЅР° MANUAL
 
-		// Вывод
-		void showTable() const throw(std::out_of_range); // Показать всю таблицу
-		void showColumn(int index) const throw(std::out_of_range); // Показать столбец с индексом INDEX
-		void showRow(int index) const throw(std::out_of_range); // Показать строку с индексом INDEX
+		// Р’С‹РІРѕРґ
+		void showTable() const throw(std::out_of_range); // РџРѕРєР°Р·Р°С‚СЊ РІСЃСЋ С‚Р°Р±Р»РёС†Сѓ
+		void showColumn(int index) const throw(std::out_of_range); // РџРѕРєР°Р·Р°С‚СЊ СЃС‚РѕР»Р±РµС† СЃ РёРЅРґРµРєСЃРѕРј INDEX
+		void showRow(int index) const throw(std::out_of_range); // РџРѕРєР°Р·Р°С‚СЊ СЃС‚СЂРѕРєСѓ СЃ РёРЅРґРµРєСЃРѕРј INDEX
 
-		// Обрщение к колонке
+		// РћР±СЂС‰РµРЅРёРµ Рє РєРѕР»РѕРЅРєРµ
 		Column & getColumn(int index) throw (std::out_of_range);
 		Column & getLastColumn();
 
-		// Удаление колонок
-		void deleteLastColumn(); // Удалить последний столбец в таблице
-		void deleteColumn(int index)  throw(std::out_of_range); // Удалить столбец с индексом INDEX
+		// РЈРґР°Р»РµРЅРёРµ РєРѕР»РѕРЅРѕРє
+		void deleteLastColumn(); // РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЃС‚РѕР»Р±РµС† РІ С‚Р°Р±Р»РёС†Рµ
+		void deleteColumn(int index)  throw(std::out_of_range); // РЈРґР°Р»РёС‚СЊ СЃС‚РѕР»Р±РµС† СЃ РёРЅРґРµРєСЃРѕРј INDEX
 
-		// Получение размеров
+		// РџРѕР»СѓС‡РµРЅРёРµ СЂР°Р·РјРµСЂРѕРІ
 		int getNumberOfColumns() const;
 		void setNumberOfColumns(int n);
 		int getNumberOfRows() const;
 		void setNumberOfRows(int n);
 	private:
-		int numberOfColumns; // Количество стобцов в таблице
-		int numberOfRows; // Количество строк в таблице
+		int numberOfColumns; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР±С†РѕРІ РІ С‚Р°Р±Р»РёС†Рµ
+		int numberOfRows; // РљРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ С‚Р°Р±Р»РёС†Рµ
 
-		// Разделители
+		// Р Р°Р·РґРµР»РёС‚РµР»Рё
 		const char cornerSeparator;
 		const char verticalSeparator;
 		const char horizontalSeparator;
 
-		// Класс одной колонки
+		// РљР»Р°СЃСЃ РѕРґРЅРѕР№ РєРѕР»РѕРЅРєРё
 		class Column
 		{
 		    public:
-		    	// Конструкторы
+		    	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 		    	Column(SimpleTable * tableReference, std::string name, Width widthFormat = Width::BY_AVERAGE);
 		    	Column(SimpleTable * tableReference, std::string name, int width);
 
-		    	// Добавление элементов в конец
-		    	void appendMultileItems(int n, T * items); // Добавить несколько элементов в конец
-		    	void appendItem(T item); // Добавить элемент в конец таблицы
+		    	// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІ РєРѕРЅРµС†
+		    	void appendMultileItems(int n, T * items); // Р”РѕР±Р°РІРёС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РєРѕРЅРµС†
+		    	void appendItem(T item); // Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС† С‚Р°Р±Р»РёС†С‹
 
-		    	// Добавление элементов в произвольное место
-		    	void insertMultipleItems(int index, int n, T * items); // Добавить несколько элементов в позицию, начиная с INDEX
-		    	void insertItem(T item, int index) throw(std::out_of_range); // Добавить элемент в позизию INDEX
+		    	// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РІ РїСЂРѕРёР·РІРѕР»СЊРЅРѕРµ РјРµСЃС‚Рѕ
+		    	void insertMultipleItems(int index, int n, T * items); // Р”РѕР±Р°РІРёС‚СЊ РЅРµСЃРєРѕР»СЊРєРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РїРѕР·РёС†РёСЋ, РЅР°С‡РёРЅР°СЏ СЃ INDEX
+		    	void insertItem(T item, int index) throw(std::out_of_range); // Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РїРѕР·РёР·РёСЋ INDEX
 
-		    	// Удаление элеметов из столбца
-		    	void deleteItem(int index) throw(std::out_of_range); // Удалить элемент из позиции INDEX
-		    	void deleteLastItem(); // Удалить последний элемент колонки
+		    	// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµС‚РѕРІ РёР· СЃС‚РѕР»Р±С†Р°
+		    	void deleteItem(int index) throw(std::out_of_range); // РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ РёР· РїРѕР·РёС†РёРё INDEX
+		    	void deleteLastItem(); // РЈРґР°Р»РёС‚СЊ РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚ РєРѕР»РѕРЅРєРё
 
-		    	// Вывод
-		    	bool showItem(int index) const; // Вывести элемент INDEX
-		    	void show() const; // Вывести весь столбец
+		    	// Р’С‹РІРѕРґ
+		    	bool showItem(int index) const; // Р’С‹РІРµСЃС‚Рё СЌР»РµРјРµРЅС‚ INDEX
+		    	void show() const; // Р’С‹РІРµСЃС‚Рё РІРµСЃСЊ СЃС‚РѕР»Р±РµС†
 
-		    	// Обращение к элементам
-		    	const T & getItem(int index) throw(std::out_of_range); // получить элемент с индексом INDEX
-		    	void setItem(int index, T data) throw(std::out_of_range); // Положить в элемент INDEX значение DATA
+		    	// РћР±СЂР°С‰РµРЅРёРµ Рє СЌР»РµРјРµРЅС‚Р°Рј
+		    	const T & getItem(int index) throw(std::out_of_range); // РїРѕР»СѓС‡РёС‚СЊ СЌР»РµРјРµРЅС‚ СЃ РёРЅРґРµРєСЃРѕРј INDEX
+		    	void setItem(int index, T data) throw(std::out_of_range); // РџРѕР»РѕР¶РёС‚СЊ РІ СЌР»РµРјРµРЅС‚ INDEX Р·РЅР°С‡РµРЅРёРµ DATA
 
-		    	// Получение ширины столбца
+		    	// РџРѕР»СѓС‡РµРЅРёРµ С€РёСЂРёРЅС‹ СЃС‚РѕР»Р±С†Р°
 				int getWidth() const;
 
-				// Получить имя столбца
+				// РџРѕР»СѓС‡РёС‚СЊ РёРјСЏ СЃС‚РѕР»Р±С†Р°
 				std::string getName() const;
 				void setName(std::string name);
 			private:
-				std::string name; // Имя колонки
-				std::vector<T> items; // Элементы в колонке
-				int width; // Ширина колонки
-				Width widthFormat; // То как будет расчитываться ширина колонки
+				std::string name; // РРјСЏ РєРѕР»РѕРЅРєРё
+				std::vector<T> items; // Р­Р»РµРјРµРЅС‚С‹ РІ РєРѕР»РѕРЅРєРµ
+				int width; // РЁРёСЂРёРЅР° РєРѕР»РѕРЅРєРё
+				Width widthFormat; // РўРѕ РєР°Рє Р±СѓРґРµС‚ СЂР°СЃС‡РёС‚С‹РІР°С‚СЊСЃСЏ С€РёСЂРёРЅР° РєРѕР»РѕРЅРєРё
 				SimpleTable * tableReference;
 
-				// Установка ширины столбца
+				// РЈСЃС‚Р°РЅРѕРІРєР° С€РёСЂРёРЅС‹ СЃС‚РѕР»Р±С†Р°
 				void setWidth();
 
 				void drawOneColumnLine() const;
 		};
 
-		// Вектор колонок
+		// Р’РµРєС‚РѕСЂ РєРѕР»РѕРЅРѕРє
 		std::vector<SimpleTable<T>::Column> columns;
 
-		// Рисование дополнительных элементов
+		// Р РёСЃРѕРІР°РЅРёРµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ
 		void drawLine() const;
 		void drawTitle() const;
 };
@@ -298,7 +298,7 @@ bool SimpleTable<T>::Column::showItem(int index) const
 	if(index < 0 || index >= items.size())
 	    return false;
 
-	/// Перевод в строку
+	/// РџРµСЂРµРІРѕРґ РІ СЃС‚СЂРѕРєСѓ
     std::ostringstream sstream;
     sstream << items.at(index);
     std::string varString = sstream.str();
@@ -505,7 +505,7 @@ void SimpleTable<T>::Column::setWidth()
     int Max = 1, Average = 0;
     for(const auto & item : items)
     {
-        /// Перевод в строку
+        /// РџРµСЂРµРІРѕРґ РІ СЃС‚СЂРѕРєСѓ
         std::ostringstream sstream;
         sstream << item;
         std::string varString = sstream.str();
